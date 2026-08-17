@@ -1,0 +1,16 @@
+{
+  "name": "KWW Kiosk",
+  "version": "1.3.25",
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP32-S3",
+      "parts": [
+        {
+          "path": "feedback-kiosk-esp32s3.bin",
+          "offset": 0
+        }
+      ]
+    }
+  ]
+}
