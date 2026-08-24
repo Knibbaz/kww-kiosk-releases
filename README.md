@@ -28,8 +28,25 @@ Sluit een kastje via USB-C aan, klik **Connect** en kies de poort.
 
 ## Nieuwe firmware publiceren
 
-De binary komt uit de firmware-repo (`pio run -e esp32-s3-amoled-175` +
-`scripts/build_webflasher.sh`, die de merged `.bin` maakt). Publiceren = de nieuwe
-`feedback-kiosk-esp32s3.bin` en een bijgewerkte `manifest.json` hierheen kopiëren
-en committen. (Later automatiseren we dit vanuit de CI van de firmware-repo; dat
-vraagt een deploy-token — zie de TODO in `kww-kiosk`.)
+**Automatisch (aanrader):** in de firmware-repo (`kww-kiosk`) een tag pushen —
+`.github/workflows/release.yml` bouwt de firmware, voegt hem samen en publiceert
+hierheen:
+
+    git tag v1.3.26 && git push origin v1.3.26
+
+Eenmalige setup (in `kww-kiosk`, niet hier):
+
+1. Maak op GitHub een **fine-grained personal access token** met alleen
+   *Repository access: Only select repositories* -> deze repo
+   (`kww-kiosk-releases`) en *Permissions* -> **Contents: Read and write**.
+   Geen andere rechten, geen toegang tot andere repo's.
+2. Zet dat token in `kww-kiosk` als repo-secret
+   **`RELEASES_DEPLOY_TOKEN`** (Settings -> Secrets and variables -> Actions).
+3. Klaar. Elke `v*`-tag in `kww-kiosk` publiceert automatisch hierheen; de
+   workflow weigert te publiceren als de tag niet overeenkomt met `FW_VERSION`
+   in `src/config.h`.
+
+**Handmatig (zonder CI):** `pio run -e esp32-s3-amoled-175` +
+`scripts/build_webflasher.sh` in de firmware-repo bouwt lokaal dezelfde
+`feedback-kiosk-esp32s3.bin` + bijgewerkte `manifest.json`/`index.html` in deze
+map (als sibling-checkout); commit en push die dan hier.
