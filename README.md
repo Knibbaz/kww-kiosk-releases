@@ -11,6 +11,8 @@ browser-flasher, zodat een kastje geflasht en bijgewerkt kan worden zonder de
 | `index.html` | Web-flasher (ESP Web Tools, Web Serial). Flasht een kastje via USB vanuit de browser. |
 | `manifest.json` | Manifest dat de flasher vertelt welke binary te schrijven. |
 | `feedback-kiosk-esp32s3.bin` | De samengevoegde firmware-binary (bootloader + partities + app). |
+| `ota.json` | Manifest voor de auto-update van de kastjes (versie + url + sha256). |
+| `bin/vx.y/firmware-*.bin` | OTA-binary's per release, de laatste 3 blijven staan. |
 | `survey/` | Losse feedback/review-landingspagina. |
 
 ## Web-flasher gebruiken
