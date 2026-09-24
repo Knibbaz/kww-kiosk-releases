@@ -1,6 +1,6 @@
 {
-  "version": "1.5.6",
-  "url": "https://raw.githubusercontent.com/Knibbaz/kww-kiosk-releases/main/bin/v1.5/firmware-1.5.6.bin",
-  "sha256": "6b6182fbc43d5c20f813556e644982d394d8edf442439465c20d5f13371192ab",
-  "size": 2005088
+  "version": "1.6.0",
+  "url": "https://raw.githubusercontent.com/Knibbaz/kww-kiosk-releases/main/bin/v1.6/firmware-1.6.0.bin",
+  "sha256": "d89ea70d440c2b13f16464298b9fe8634fbd7cae5b2194380e22c26997f40b81",
+  "size": 2009712
 }
