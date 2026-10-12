@@ -1,0 +1,12 @@
+{
+  "releases": [
+    {
+      "version": "1.9.0",
+      "url": "https://raw.githubusercontent.com/Knibbaz/kww-kiosk-releases/main/bin/v1.9/firmware-1.9.0.bin",
+      "sha256": "134ac2ccb030dd7d32b4360b8a9fda5f84b9cc6f73fa7c68eaad11471004a933",
+      "size": 2026288,
+      "flash": "bin/v1.9/flash-1.9.0.bin",
+      "published": "2026-10-12T08:42:04Z"
+    }
+  ]
+}
